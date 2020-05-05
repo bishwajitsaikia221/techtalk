@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %}  All Questions {% endblock title%}
+{% block question_listactive %} active {% endblock question_listactive %}
+{% block body  %}
+
+<div class="container my-3">
+<a class="btn btn-success" href="{% url 'questions' %}">Ask your Questions</a>
+<hr>
+<h2>All Questions :</h2>
+{% for ask in allQuesn  %}
+<div class="list-group">
+  <div class="list-group-item list-group-item-action flex-column align-items-start">
+    <div class="d-flex w-100 justify-content-between">
+        <h4 class="mb-1"><b>{{ ask.askq |capfirst }}</a></b>
+        <small>Asked {{ ask.updated|timesince }} ago </small><br>
+         <small><small>Category: </small>{{ ask.category }}</a></small>
+          <small> <div class="mb-1 text-muted">{{ask.updated|date}}</div>
+          <b><p>{{ask.details| truncatechars:100}}</p></b></small>
+          <div class="my-2">
+         <div class="fb-comments" data-href="http://127.0.0.1:8000/question_list/{{ask.askq}}" data-numposts="5" data-width=""></div>
+          </div>
+    </div>
+</div>
+         
+{% endfor %}
+
+
+
+
+
+{% endblock body  %}
+          
+          
+       
+
+
+
+
+
+

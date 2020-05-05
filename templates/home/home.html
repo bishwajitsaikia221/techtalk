@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block title %} Home {% endblock title%}
+{% block homeactive %} active {% endblock homeactive %}
+
+{% block body  %}   
+
+<div class="container my-3">
+<div class="jumbotron">
+  <h1 class="display-4">Welcome to TechTalk!</h1>
+  <p class="lead">This is a website for bmsce students.This websites helps those students who wants to ask questions.This plateform helps you to clear your doubts.All answer of your questions answered by your seniors or faculty.</p>
+  <hr class="my-4">
+  <p>Hope you guys are like it.Feel free to ask any questions.Thank you.</p>
+  <a class="btn btn-danger btn-lg" href="/blog" role="button">Go to blog</a>
+  <a class="btn btn-success btn-lg" href="/question_list" role="button">Questions</a>
+  </p>
+</div>
+</div>
+<hr>
+
+<div class="container my-3">
+<div class="card text-center">
+  <div class="card-header">
+    Click here to see all questions
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Questions List</h5>
+    <p class="card-text">Ask by students.</p>
+    <a href="/question_list" class="btn btn-primary">Click Here</a>
+  </div>
+
+</div>
+</div>
+<hr>
+<div class="container my-3">
+<div class="card text-center">
+  <div class="card-header">
+    Click here to ask any questions
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Ask your question</h5>
+    <p class="card-text">Feel free to ask.</p>
+    <a href="/questions" class="btn btn-primary">Click Here</a>
+  </div>
+
+</div>
+</div>
+
+
+
+{% endblock body  %}

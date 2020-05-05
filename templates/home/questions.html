@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %} Ask Questions {% endblock title%}
+{% block questionsactive %} active {% endblock questionsactive %}
+{% block body  %}
+
+
+<div class="container mt-3">
+    <form method="post" action="/questions">
+        {% csrf_token %}
+        <h2><strong>{{request.user.username|capfirst}}</strong> ask a question?</h2>
+        <div class="form-group">
+            <label for="question">Question*</label>
+            <input type="text" class="form-control" id="askq" name="askq" aria-describedby="askq" placeholder="What is your question?" required>
+        </div>
+        <div class="form-group">
+            <label for="content">Details*</label>
+            <textarea class="form-control" name="details" id="details" cols="30" rows="5" placeholder="Describe briefly"></textarea>
+        </div>
+
+        <div id="div_id_category" class="form-group"> <label for="id_category" class="control-label  requiredField">
+                Category<span class="asteriskField">*</span> </label>
+            <div class="controls "> <select name="category" class="select form-control" required id="id_category" required>
+                    <option value="" selected>-Select category-</option>
+                    <option value="History">History</option>
+                    <option value="Economics">Economics</option>
+                    <option value="Technology">Technology</option>
+
+                </select> </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+
+</div>
+
+
+
+{% endblock body  %}
